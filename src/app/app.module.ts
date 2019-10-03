@@ -7,6 +7,7 @@ import { PopUpOneComponent } from './components/dialogs/pop-up-one/pop-up-one.co
 import { PopUpTwoComponent } from './components/dialogs/pop-up-two/pop-up-two.component';
 import { PopUpContainerComponent } from './components/core/pop-up-container/pop-up-container.component';
 import { PopUpThreeComponent } from './components/dialogs/pop-up-three/pop-up-three.component';
+import { PopUpFourComponent } from './components/dialogs/pop-up-four/pop-up-four.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +17,13 @@ import { PopUpThreeComponent } from './components/dialogs/pop-up-three/pop-up-th
     PopUpTwoComponent,
     PopUpContainerComponent,
     PopUpThreeComponent,
+    PopUpFourComponent,
   ],
   entryComponents: [
     PopUpOneComponent,
     PopUpTwoComponent,
-    PopUpThreeComponent
+    PopUpThreeComponent,
+    PopUpFourComponent
   ],
   imports: [
     BrowserModule

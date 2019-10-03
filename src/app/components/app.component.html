@@ -3,6 +3,8 @@
 <div (click)="openPopUp('leftSideMenu')">Open pop-up 2 send data from popUp</div>
 <br/>
 <div (click)="openPopUp('popUpWithData')">Open pop-up 3 with data for popUp</div>
+<br/>
+<div (click)="openLockedPopUp('locked')">Open pop-up 4 (locked)</div>
 
 <br/>
 <div *ngIf="(dataFromPopUp$ | async) as data">
@@ -13,9 +15,3 @@
 <app-shading>
   <app-pop-up-container></app-pop-up-container>
 </app-shading>
-
-<!--TODO:-->
-<!-- 1. Prevent shading close -->
-
-
-

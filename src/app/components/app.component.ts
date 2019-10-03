@@ -21,4 +21,8 @@ export class AppComponent {
   public openPopUp(popUpName: string) {
     this.popUpService.openPopUp({ name: popUpName, payload$: of({ name: 'Alex', age: 20 }) });
   }
+
+  public openLockedPopUp(popUpName: string) {
+    this.popUpService.openPopUp({ name: popUpName, isLocked: true });
+  }
 }

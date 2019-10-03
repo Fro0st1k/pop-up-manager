@@ -2,6 +2,7 @@ import { ComponentFactory, ComponentFactoryResolver, Injectable, Injector } from
 import { PopUpOneComponent } from '../../components/dialogs/pop-up-one/pop-up-one.component';
 import { PopUpTwoComponent } from '../../components/dialogs/pop-up-two/pop-up-two.component';
 import { PopUpThreeComponent } from '../../components/dialogs/pop-up-three/pop-up-three.component';
+import { PopUpFourComponent } from '../../components/dialogs/pop-up-four/pop-up-four.component';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,8 @@ export class PopUpManagerService {
   private popUpList = {
     login: PopUpOneComponent,
     leftSideMenu: PopUpTwoComponent,
-    popUpWithData: PopUpThreeComponent
+    popUpWithData: PopUpThreeComponent,
+    locked: PopUpFourComponent,
   };
 
   private popUpFactories = {};

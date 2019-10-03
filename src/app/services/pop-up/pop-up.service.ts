@@ -27,12 +27,26 @@ export class PopUpService {
   }
 
   public closePopUp(): void {
+    if (this.isPopUpLocked()) {
+      return;
+    }
     this.removePopUpFromStack();
     if (this.hasMorePopUpsInStack()) {
       this.renderPreviousPopUp();
     } else {
       this.setPopUpState({ isOpen: false });
     }
+  }
+
+  public removeUnlock(isCloseNeeded?: boolean) {
+    this.getCurrentPopUpState().isLocked = false;
+    if (isCloseNeeded) {
+      this.closePopUp();
+    }
+  }
+
+  private isPopUpLocked(): boolean {
+    return this.getCurrentPopUpState().isLocked;
   }
 
   private setPopUpState(state: IPopUpState): void {
