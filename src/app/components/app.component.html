@@ -1,0 +1,21 @@
+<div (click)="openPopUp('login')">Open pop-up 1</div>
+<br/>
+<div (click)="openPopUp('leftSideMenu')">Open pop-up 2 send data from popUp</div>
+<br/>
+<div (click)="openPopUp('popUpWithData')">Open pop-up 3 with data for popUp</div>
+
+<br/>
+<div *ngIf="(dataFromPopUp$ | async) as data">
+  data from pop up 2
+  <div *ngFor="let num of data.payload; let i = index;">{{ i + '. ' + num }}</div>
+</div>
+
+<app-shading>
+  <app-pop-up-container></app-pop-up-container>
+</app-shading>
+
+<!--TODO:-->
+<!-- 1. Prevent shading close -->
+
+
+

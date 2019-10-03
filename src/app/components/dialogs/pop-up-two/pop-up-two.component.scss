@@ -1,0 +1,18 @@
+.qwe {
+  width: 200px;
+  height: 100vh;
+  background: wheat;
+  z-index: 200;
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+
+  &__btn {
+    display: block;
+    background-color: cadetblue;
+    border-radius: 3px;
+    padding: 0 5px;
+    line-height: 30px;
+  }
+}

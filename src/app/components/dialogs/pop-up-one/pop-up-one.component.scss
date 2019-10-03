@@ -1,0 +1,22 @@
+.ewq {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background: aliceblue;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  transform: translate(-50%, -50%);
+
+  &__btn {
+    margin-top: 20px;
+    display: block;
+    padding: 5px 10px;
+    color: white;
+    background-color: cadetblue;
+    border-radius: 3px;
+  }
+}

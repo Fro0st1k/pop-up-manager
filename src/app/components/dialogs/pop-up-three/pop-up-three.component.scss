@@ -1,0 +1,22 @@
+.test {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 400px;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f2f7fa;
+
+  &__btn {
+    margin-top: 20px;
+    display: block;
+    padding: 5px 10px;
+    color: white;
+    background-color: cadetblue;
+    border-radius: 3px;
+  }
+}

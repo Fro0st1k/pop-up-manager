@@ -1,0 +1,5 @@
+<div *ngIf="(payload$ | async) as userData" class="test">
+  <h4>some input data</h4>
+  <span>{{ userData.name }} : {{ userData.age }}</span>
+  <button (click)="openPopUp('leftSideMenu')" class="test__btn">open popup above this</button>
+</div>
