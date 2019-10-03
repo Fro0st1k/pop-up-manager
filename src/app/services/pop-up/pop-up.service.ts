@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, ViewRef } from '@angular/core';
 import { Subject } from 'rxjs';
 import { IPopUpData, IPopUpState } from '../../entities/pop-up';
 import { share } from 'rxjs/operators';
@@ -72,6 +72,13 @@ export class PopUpService {
     }
   }
 
+  public safePopUpView(viewRef: ViewRef) {
+    const prevPopUpState = this.getPreviousPopUpState();
+    if (prevPopUpState) {
+      prevPopUpState.viewRef = viewRef;
+    }
+  }
+
   private hasMorePopUpsInStack(): boolean {
     return !!this.popUpsStack.length;
   }
@@ -82,6 +89,10 @@ export class PopUpService {
 
   private getCurrentPopUpState(): IPopUpState {
     return this.popUpsStack[this.popUpsStack.length - 1];
+  }
+
+  private getPreviousPopUpState(): IPopUpState {
+    return this.popUpsStack[this.popUpsStack.length - 2];
   }
 
   public transferDataFromPopUp(dataFromPopUp: IPopUpData | any): void {

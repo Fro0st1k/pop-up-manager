@@ -30,6 +30,12 @@ export class PopUpContainerComponent implements OnInit, OnDestroy {
   }
 
   public renderPopUp(state: IPopUpState): void {
+    if (state.viewRef) {
+      this.containerRef.clear();
+      this.containerRef.insert(state.viewRef);
+      return;
+    }
+
     const compFactory = this.popUpManagerService.getPopUpComponentFactory(state.name);
     this.clearContainer();
     const popUpComponent = this.containerRef.createComponent(compFactory);
@@ -40,6 +46,7 @@ export class PopUpContainerComponent implements OnInit, OnDestroy {
   }
 
   public clearContainer(): void {
+    this.popUpService.safePopUpView(this.containerRef.detach());
     this.containerRef.clear();
   }
 
